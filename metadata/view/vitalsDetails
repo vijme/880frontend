@@ -1,0 +1,453 @@
+{
+    "type": "Ext.carousel.Carousel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vitalDetails",
+        "designer|userClassName": "vitalsDetails"
+    },
+    "name": "MyCarousel",
+    "designerId": "721330ef-ebd2-4397-8488-35f6f345583f",
+    "cn": [
+        {
+            "type": "Ext.carousel.Carousel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyCarousel",
+            "designerId": "4383415d-7726-4ee7-8230-3644761a14fc",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyFormPanel",
+                    "designerId": "f2b02112-4154-47ea-85a2-df8172e741d0",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Heart Rate"
+                            },
+                            "name": "MyTextField4",
+                            "designerId": "5a53cbf9-e057-46b1-b42b-2a1ff9a8224b"
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Blood Pressue"
+                            },
+                            "name": "MyTextField5",
+                            "designerId": "2afb7c1b-615a-4f16-8598-a9ac90c50980"
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Weight"
+                            },
+                            "name": "MyTextField6",
+                            "designerId": "243748b3-158a-4e7c-9079-1e493e118d0f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyFormPanel1",
+                    "designerId": "2626f7d6-871d-40e5-8308-f1a2b6de1581",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Select",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "myselectfield",
+                                "label": "Do you have shortness of Breath?",
+                                "options": [
+                                    "[{",
+                                    "text:'Choose one',",
+                                    "value:'Choose one'",
+                                    "},",
+                                    "{",
+                                    "text:'Yes', ",
+                                    "value:'Yes'",
+                                    "},",
+                                    "{",
+                                    " text:'No',",
+                                    " value:'No'",
+                                    "}]"
+                                ]
+                            },
+                            "name": "MySelectField",
+                            "designerId": "4fcef014-18f8-4ff4-9c23-e8791752e2bc",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMyselectfieldChange",
+                                        "implHandler": [
+                                            "                if (newValue=='Yes') {",
+                                            "                    document.getElementById('txtSOBDuration').style.display='block';",
+                                            "              } else {",
+                                            "                   document.getElementById('txtSOBDuration').style.display='none';",
+                                            "              }",
+                                            "     "
+                                        ],
+                                        "name": "change"
+                                    },
+                                    "name": "onMyselectfieldChange",
+                                    "designerId": "1419e10c-fbce-49aa-a2c9-b8cabbacc9eb"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|createAlias": null,
+                                "designer|displayName": null,
+                                "disabled": false,
+                                "hidden": false,
+                                "id": "txtSOBDuration",
+                                "itemId": null,
+                                "label": "For how long ?",
+                                "style": [
+                                    "display:none"
+                                ]
+                            },
+                            "name": "MyTextField7",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "492226b3-ce56-4cfc-8a4f-fd0c62b495e7"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "",
+                                "title": "Have you had cough?",
+                                "width": "40%"
+                            },
+                            "name": "MyFieldSet",
+                            "designerId": "719addc3-cc67-43b8-a2c4-0f366711fb0d",
+                            "cn": [
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Yes",
+                                        "labelAlign": "right",
+                                        "labelWidth": "40%",
+                                        "name": "rdCough",
+                                        "width": "40%"
+                                    },
+                                    "name": "MyRadioButton",
+                                    "designerId": "59f5ff86-81e1-4185-af7f-352647cf09aa"
+                                },
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "No",
+                                        "labelAlign": "right",
+                                        "labelWidth": "40%",
+                                        "name": "rdCough",
+                                        "width": "40%"
+                                    },
+                                    "name": "MyRadioButton2",
+                                    "designerId": "2f29b321-3f57-494c-a4ed-1bb8e223ccc1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "centered": false,
+                                "title": "Color",
+                                "width": "40%"
+                            },
+                            "name": "MyFieldSet1",
+                            "designerId": "175495eb-ceda-4861-bf9a-e9b1e7deff5d",
+                            "cn": [
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Clear",
+                                        "labelAlign": "right",
+                                        "labelWrap": true,
+                                        "name": "rdColor"
+                                    },
+                                    "name": "MyRadioButton3",
+                                    "designerId": "231438e4-dddd-4caa-b48c-6cd961b2e735"
+                                },
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Yellow",
+                                        "labelAlign": "right",
+                                        "labelWrap": true,
+                                        "name": "rdColor"
+                                    },
+                                    "name": "MyRadioButton4",
+                                    "designerId": "a16ae933-a89b-4837-bcb7-93c29fb2d05e"
+                                },
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Pink",
+                                        "labelAlign": "right",
+                                        "labelWrap": true,
+                                        "name": "rdColor"
+                                    },
+                                    "name": "MyRadioButton5",
+                                    "designerId": "eca6ee26-64c2-46da-85cc-4468ba2766cf"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyFormPanel2",
+                    "designerId": "3794539e-8fcb-404f-a9d8-b6f4bc7b4c9d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Do you have swelling?"
+                            },
+                            "name": "MyFieldSet2",
+                            "designerId": "797d34d6-7bee-4740-a4c2-6f0e35fc9608",
+                            "cn": [
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Yes",
+                                        "name": "rdSwelling"
+                                    },
+                                    "name": "MyRadioButton6",
+                                    "designerId": "12435aa8-00db-4c02-ab8a-a42b20e144ea"
+                                },
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "No",
+                                        "name": "rdSwelling"
+                                    },
+                                    "name": "MyRadioButton7",
+                                    "designerId": "6a23c517-1c60-4890-a583-4b68523b7cc3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Are you using Oxygen ?"
+                            },
+                            "name": "MyFieldSet3",
+                            "designerId": "2deb3a2c-a499-464c-807e-7dbab557dc00",
+                            "cn": [
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Yes",
+                                        "name": "rdOxygen"
+                                    },
+                                    "name": "MyRadioButton8",
+                                    "designerId": "b0d8f787-35d7-476f-b7b4-a10f1ac5eabe"
+                                },
+                                {
+                                    "type": "Ext.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "No",
+                                        "name": "rdOxygen"
+                                    },
+                                    "name": "MyRadioButton9",
+                                    "designerId": "4519404f-ab3a-4cfe-90f0-1e84a57b9681"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": ""
+                            },
+                            "name": "MyFieldSet4",
+                            "designerId": "be080e08-eaeb-473e-abf7-2002be8cf4ab",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "Is this new ?"
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "9397a908-404a-4452-849b-531d24d1644f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "label": "Yes",
+                                                "name": "rdOxygenNew"
+                                            },
+                                            "name": "MyRadioButton10",
+                                            "designerId": "4b37f935-0a6d-4fee-8edc-e6070791d412"
+                                        },
+                                        {
+                                            "type": "Ext.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "label": "No",
+                                                "name": "rdOxygenNew"
+                                            },
+                                            "name": "MyRadioButton12",
+                                            "designerId": "3db7afbf-8752-41b0-8aa1-ebb3929c72d8"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "How much"
+                                    },
+                                    "name": "MyTextField1",
+                                    "designerId": "c1b4dcfe-6c0e-466e-9b4e-5dad0ebff587"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

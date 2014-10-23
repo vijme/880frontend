@@ -1,0 +1,26 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Account"
+        ],
+        "name": "PatientVitalsMonitoring",
+        "requires": [
+            "Ext.MessageBox"
+        ],
+        "views": [
+            "MainView",
+            "LoginForm",
+            "RegisterForm",
+            "vitalsDetails",
+            "MyRadioButton11"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

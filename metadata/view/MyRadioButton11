@@ -1,0 +1,15 @@
+{
+    "type": "Ext.field.Radio",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyRadioButton11",
+        "label": "Field",
+        "name": "field"
+    },
+    "name": "MyRadioButton11",
+    "designerId": "639db662-6968-4a65-a0d8-042f3e900fdf"
+}
