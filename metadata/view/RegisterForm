@@ -32,7 +32,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Username",
+                        "label": "Username :",
                         "labelWidth": "40%",
                         "name": "name"
                     },
@@ -47,8 +47,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Hospital Id",
-                        "labelWidth": "40%",
+                        "label": "Hospital Id :",
+                        "labelWidth": "42%",
                         "name": "username"
                     },
                     "name": "MyTextField3",
@@ -62,7 +62,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Password",
+                        "label": "Password :",
                         "labelWidth": "40%",
                         "name": "password"
                     },
@@ -77,8 +77,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Re-enter Password",
-                        "labelWidth": "40%",
+                        "label": "Re-enter Password :",
+                        "labelWidth": "60%",
+                        "labelWrap": true,
                         "name": "password"
                     },
                     "name": "MyPasswordField1",

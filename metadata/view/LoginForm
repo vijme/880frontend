@@ -32,7 +32,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Username",
+                        "label": "Username :",
                         "labelWidth": "40%",
                         "name": "username"
                     },
@@ -40,18 +40,18 @@
                     "designerId": "993768d2-880a-47bd-b1cd-abd256b4795c"
                 },
                 {
-                    "type": "Ext.field.Text",
+                    "type": "Ext.field.Password",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Password",
+                        "label": "Password :",
                         "labelWidth": "40%",
                         "name": "password"
                     },
-                    "name": "MyTextField1",
+                    "name": "MyPasswordField2",
                     "designerId": "ed11b1e7-37ae-485f-a7fe-ee06690cbb76"
                 }
             ]

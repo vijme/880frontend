@@ -19,7 +19,7 @@ Ext.define('PatientVitalsMonitoring.view.LoginForm', {
 
     requires: [
         'Ext.form.FieldSet',
-        'Ext.field.Text',
+        'Ext.field.Password',
         'Ext.Button'
     ],
 
@@ -31,13 +31,13 @@ Ext.define('PatientVitalsMonitoring.view.LoginForm', {
                 items: [
                     {
                         xtype: 'textfield',
-                        label: 'Username',
+                        label: 'Username :',
                         labelWidth: '40%',
                         name: 'username'
                     },
                     {
-                        xtype: 'textfield',
-                        label: 'Password',
+                        xtype: 'passwordfield',
+                        label: 'Password :',
                         labelWidth: '40%',
                         name: 'password'
                     }

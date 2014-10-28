@@ -90,7 +90,7 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
                 // Navigate to register
                 mainView.push({
                     xtype: "vitalDetails",
-                    title: "Vital Details"
+                    title: "Data"
                 });
 
         };
@@ -123,18 +123,19 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
             mainView = this.getMainView(),			// Main view
             loginPanel = this.getLoginPanel(),		// Login and register buttons
             welcomePanel = this.getWelcomePanel();	// Welcome panel
+            vitalDetails = this.getVitalDetails();
 
         // Success
         var successCallback = function(resp, ops) {
 
-            // Go back
-            mainView.pop();
+             var vitalDetails = Ext.create('widget.vitalDetails');	// Registration form
 
-            // Hide login panel
-            loginPanel.hide();
 
-            // Show welcome panel
-            welcomePanel.show();
+                // Navigate to register
+                mainView.push({
+                    xtype: "vitalDetails",
+                    title: "Vital Details"
+                });
 
         };
 

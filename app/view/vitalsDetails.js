@@ -20,44 +20,69 @@ Ext.define('PatientVitalsMonitoring.view.vitalsDetails', {
     requires: [
         'Ext.carousel.Carousel',
         'Ext.form.Panel',
+        'Ext.Label',
         'Ext.field.Select',
         'Ext.form.FieldSet',
         'Ext.field.Radio'
     ],
 
     config: {
+        fullscreen: true,
+        height: 522,
         items: [
             {
                 xtype: 'carousel',
+                styleHtmlContent: true,
                 items: [
                     {
                         xtype: 'formpanel',
                         items: [
                             {
-                                xtype: 'textfield',
-                                label: 'Heart Rate'
+                                xtype: 'label',
+                                height: 50,
+                                html: 'Vital Signs',
+                                style: 'font-weight:bold;font-size:24px',
+                                styleHtmlContent: true
                             },
                             {
                                 xtype: 'textfield',
-                                label: 'Blood Pressue'
+                                width: 294,
+                                label: 'O2 Sat :'
                             },
                             {
                                 xtype: 'textfield',
-                                label: 'Weight'
+                                width: 294,
+                                label: 'Heart Rate :',
+                                labelWidth: '50%'
+                            },
+                            {
+                                xtype: 'textfield',
+                                width: 294,
+                                label: 'Blood Pressure :',
+                                labelWidth: '55%'
+                            },
+                            {
+                                xtype: 'textfield',
+                                width: 292,
+                                label: 'Weight (Kg/Lbs) :',
+                                labelWidth: '50%'
                             }
                         ]
                     },
                     {
                         xtype: 'formpanel',
+                        height: 537,
                         items: [
                             {
                                 xtype: 'selectfield',
                                 itemId: 'myselectfield',
                                 label: 'Do you have shortness of Breath?',
+                                labelWidth: '80%',
+                                labelWrap: true,
                                 options: [
                                     {
-                                        text: 'Choose one',
-                                        value: 'Choose one'
+                                        text: 'Select',
+                                        value: 'Select'
                                     },
                                     {
                                         text: 'Yes',
@@ -72,22 +97,28 @@ Ext.define('PatientVitalsMonitoring.view.vitalsDetails', {
                             {
                                 xtype: 'textfield',
                                 disabled: false,
+                                height: 69,
                                 hidden: false,
                                 id: 'txtSOBDuration',
                                 style: 'display:none',
-                                label: 'For how long ?'
+                                label: 'For how long ?',
+                                labelWidth: '',
+                                labelWrap: true
                             },
                             {
                                 xtype: 'fieldset',
-                                width: '40%',
+                                height: 88,
+                                width: 285,
+                                layout: 'hbox',
                                 title: 'Have you had cough?',
                                 items: [
                                     {
                                         xtype: 'radiofield',
+                                        itemId: 'myradiobutton',
                                         width: '40%',
                                         label: 'Yes',
                                         labelAlign: 'right',
-                                        labelWidth: '40%',
+                                        labelWidth: '',
                                         name: 'rdCough'
                                     },
                                     {
@@ -95,37 +126,120 @@ Ext.define('PatientVitalsMonitoring.view.vitalsDetails', {
                                         width: '40%',
                                         label: 'No',
                                         labelAlign: 'right',
-                                        labelWidth: '40%',
+                                        labelWidth: '',
                                         name: 'rdCough'
                                     }
                                 ]
                             },
                             {
                                 xtype: 'fieldset',
-                                centered: false,
-                                width: '40%',
-                                title: 'Color',
+                                height: 88,
+                                id: 'fsProductive',
+                                style: 'display:none',
+                                width: 285,
+                                layout: 'hbox',
+                                title: 'Is it Productive ?',
                                 items: [
                                     {
                                         xtype: 'radiofield',
-                                        label: 'Clear',
+                                        itemId: 'myradiobutton1',
+                                        width: 139,
+                                        label: 'Yes',
                                         labelAlign: 'right',
-                                        labelWrap: true,
-                                        name: 'rdColor'
+                                        labelWidth: '40%',
+                                        name: 'rdProductive'
                                     },
                                     {
                                         xtype: 'radiofield',
-                                        label: 'Yellow',
+                                        width: 135,
+                                        label: 'No',
                                         labelAlign: 'right',
-                                        labelWrap: true,
-                                        name: 'rdColor'
+                                        labelWidth: '40%',
+                                        name: 'rdProductive'
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'selectfield',
+                                id: 'selColor',
+                                style: 'display:none',
+                                width: 297,
+                                label: 'Color ?',
+                                options: [
+                                    {
+                                        text: 'Select',
+                                        value: 'Select'
+                                    },
+                                    {
+                                        text: 'Clear',
+                                        value: 'Clear'
+                                    },
+                                    {
+                                        text: 'Yellow',
+                                        value: 'Yellow'
+                                    },
+                                    {
+                                        text: 'Pink',
+                                        value: 'Pink'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'formpanel',
+                        height: 641,
+                        scrollable: true,
+                        items: [
+                            {
+                                xtype: 'fieldset',
+                                height: 88,
+                                layout: 'hbox',
+                                title: 'Do you have swelling?',
+                                items: [
+                                    {
+                                        xtype: 'radiofield',
+                                        itemId: 'myradiobutton6',
+                                        width: 144,
+                                        label: 'Yes',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
+                                        name: 'rdSwelling'
                                     },
                                     {
                                         xtype: 'radiofield',
-                                        label: 'Pink',
+                                        width: 146,
+                                        label: 'No',
                                         labelAlign: 'right',
-                                        labelWrap: true,
-                                        name: 'rdColor'
+                                        labelWidth: '40%',
+                                        name: 'rdSwelling'
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'textfield',
+                                id: 'txtWhere',
+                                style: 'display:none',
+                                label: 'Where :'
+                            },
+                            {
+                                xtype: 'selectfield',
+                                id: 'selFrequency',
+                                style: 'display:none',
+                                label: 'Frequency :',
+                                labelWidth: '40%',
+                                options: [
+                                    {
+                                        text: 'Select',
+                                        value: 'Select'
+                                    },
+                                    {
+                                        text: 'Increased',
+                                        value: 'Increased'
+                                    },
+                                    {
+                                        text: 'Same',
+                                        value: 'Same'
                                     }
                                 ]
                             }
@@ -136,59 +250,129 @@ Ext.define('PatientVitalsMonitoring.view.vitalsDetails', {
                         items: [
                             {
                                 xtype: 'fieldset',
-                                title: 'Do you have swelling?',
+                                width: 284,
+                                layout: 'hbox',
+                                title: 'Are you using oxygen ?',
                                 items: [
                                     {
                                         xtype: 'radiofield',
+                                        itemId: 'myradiobutton4',
+                                        width: 127,
                                         label: 'Yes',
-                                        name: 'rdSwelling'
-                                    },
-                                    {
-                                        xtype: 'radiofield',
-                                        label: 'No',
-                                        name: 'rdSwelling'
-                                    }
-                                ]
-                            },
-                            {
-                                xtype: 'fieldset',
-                                title: 'Are you using Oxygen ?',
-                                items: [
-                                    {
-                                        xtype: 'radiofield',
-                                        label: 'Yes',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
                                         name: 'rdOxygen'
                                     },
                                     {
                                         xtype: 'radiofield',
+                                        height: 43,
+                                        width: 114,
                                         label: 'No',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
                                         name: 'rdOxygen'
                                     }
                                 ]
                             },
                             {
                                 xtype: 'fieldset',
-                                title: '',
+                                id: 'fsOxygenNew',
+                                style: 'display:none',
+                                width: 284,
+                                layout: 'hbox',
+                                title: 'Is this new ?',
                                 items: [
                                     {
-                                        xtype: 'fieldset',
-                                        title: 'Is this new ?',
-                                        items: [
-                                            {
-                                                xtype: 'radiofield',
-                                                label: 'Yes',
-                                                name: 'rdOxygenNew'
-                                            },
-                                            {
-                                                xtype: 'radiofield',
-                                                label: 'No',
-                                                name: 'rdOxygenNew'
-                                            }
-                                        ]
+                                        xtype: 'radiofield',
+                                        width: 120,
+                                        label: 'Yes',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
+                                        name: 'rdOxygenNew'
                                     },
+                                    {
+                                        xtype: 'radiofield',
+                                        width: 129,
+                                        label: 'No',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
+                                        name: 'rdOxygenNew'
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'fieldset',
+                                id: 'fsOxygenHowMuch',
+                                style: 'display:none',
+                                width: 286,
+                                layout: 'hbox',
+                                title: 'How much ?',
+                                items: [
                                     {
                                         xtype: 'textfield',
-                                        label: 'How much'
+                                        id: 'txtOxygen',
+                                        label: ''
+                                    },
+                                    {
+                                        xtype: 'label',
+                                        centered: false,
+                                        html: 'L/min'
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'fieldset',
+                                id: 'fsOxygenHelping',
+                                style: 'display:none',
+                                width: 282,
+                                layout: 'hbox',
+                                title: 'Is it helping ?',
+                                items: [
+                                    {
+                                        xtype: 'radiofield',
+                                        width: 121,
+                                        label: 'Yes',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
+                                        name: 'rdOxygenHelping'
+                                    },
+                                    {
+                                        xtype: 'radiofield',
+                                        width: 130,
+                                        label: 'No',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
+                                        name: 'rdOxygenHelping'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'formpanel',
+                        layout: 'hbox',
+                        items: [
+                            {
+                                xtype: 'fieldset',
+                                id: 'fsDailyMedicine',
+                                layout: 'hbox',
+                                title: 'Have you taken your medicine daily?',
+                                items: [
+                                    {
+                                        xtype: 'radiofield',
+                                        width: 138,
+                                        label: 'Yes',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
+                                        name: 'rdMedicineDaily'
+                                    },
+                                    {
+                                        xtype: 'radiofield',
+                                        width: 150,
+                                        label: 'No',
+                                        labelAlign: 'right',
+                                        labelWidth: '40%',
+                                        name: 'rdMedicineDaily'
                                     }
                                 ]
                             }
@@ -202,6 +386,26 @@ Ext.define('PatientVitalsMonitoring.view.vitalsDetails', {
                 fn: 'onMyselectfieldChange',
                 event: 'change',
                 delegate: '#myselectfield'
+            },
+            {
+                fn: 'onMyradiobuttonChange',
+                event: 'change',
+                delegate: '#myradiobutton'
+            },
+            {
+                fn: 'onMyradiobutton1Change',
+                event: 'change',
+                delegate: '#myradiobutton1'
+            },
+            {
+                fn: 'onMyradiobutton6Change',
+                event: 'change',
+                delegate: '#myradiobutton6'
+            },
+            {
+                fn: 'onMyradiobutton4Change',
+                event: 'change',
+                delegate: '#myradiobutton4'
             }
         ]
     },
@@ -213,6 +417,46 @@ Ext.define('PatientVitalsMonitoring.view.vitalsDetails', {
                            document.getElementById('txtSOBDuration').style.display='none';
                       }
 
+    },
+
+    onMyradiobuttonChange: function(checkboxfield, newValue, oldValue, eOpts) {
+               if(newValue) {
+                   document.getElementById("fsProductive").style.display='block';
+               } else {
+                   document.getElementById("fsProductive").style.display='none';
+                   document.getElementById("selColor").style.display='none';
+
+               }
+    },
+
+    onMyradiobutton1Change: function(checkboxfield, newValue, oldValue, eOpts) {
+                if (newValue) {
+                    document.getElementById("selColor").style.display='block';
+                } else {
+                    document.getElementById("selColor").style.display='none';
+                }
+    },
+
+    onMyradiobutton6Change: function(checkboxfield, newValue, oldValue, eOpts) {
+                    if (newValue){
+                        document.getElementById("txtWhere").style.display='block';
+                        document.getElementById("selFrequency").style.display='block';
+                    } else {
+                        document.getElementById("txtWhere").style.display='none';
+                        document.getElementById("selFrequency").style.display='none';
+                    }
+    },
+
+    onMyradiobutton4Change: function(checkboxfield, newValue, oldValue, eOpts) {
+                    if (newValue) {
+                       document.getElementById("fsOxygenNew").style.display='block';
+                       document.getElementById("fsOxygenHowMuch").style.display='block';
+                       document.getElementById("fsOxygenHelping").style.display='block';
+                    } else {
+                       document.getElementById("fsOxygenNew").style.display='none';
+                       document.getElementById("fsOxygenHowMuch").style.display='none';
+                       document.getElementById("fsOxygenHelping").style.display='none';
+                    }
     }
 
 });
