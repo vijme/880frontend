@@ -21,7 +21,7 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
             mainView: 'mainview',
             loginPanel: 'mainview #loginPanel',
             welcomePanel: 'mainview #welcomePanel',
-            vitalForm1: 'vitalsForm1'
+            vitalsForm1: 'vitalsForm1'
         },
 
         control: {
@@ -88,12 +88,12 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
             // Hide login panel
             //loginPanel.hide();
 
-            var vitalDetails = Ext.create('widget.vitalForm1');	// Registration form
+            var vitalDetails = Ext.create('widget.vitalsForm1');	// Registration form
 
 
                 // Navigate to register
                 mainView.push({
-                    xtype: "vitalForm1",
+                    xtype: "vitalsForm1",
                     title: "Data"
                 });
 

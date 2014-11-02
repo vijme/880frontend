@@ -1,6 +1,6 @@
 Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.vitalForm2',
+    alias: 'widget.vitalsForm2',
 
     requires: [
         'Ext.form.Panel',
@@ -9,6 +9,9 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
         'Ext.form.FieldSet',
         'Ext.field.Radio'
     ],
+    id : 'vitalsForm2',
+    xtype: 'vitalsForm2',
+
 
     config: {
         fullscreen: true,
@@ -81,7 +84,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
                         label: 'Yes',
                         labelAlign: 'right',
                         labelWidth: '',
-                        name: 'rdCough'
+                        name: 'rdCough',
+                        value: 'Yes'
                     },
                     {
                         xtype: 'radiofield',
@@ -89,6 +93,7 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
                         label: 'No',
                         labelAlign: 'right',
                         labelWidth: '',
+                        value: 'No',
                         name: 'rdCough'
                     }
                 ]
@@ -107,6 +112,7 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
                         itemId: 'myradiobutton1',
                         width: '40%',
                         label: 'Yes',
+                        value: 'Yes',
                         labelAlign: 'right',
                         labelWidth: '40%',
                         name: 'rdProductive'
@@ -115,9 +121,10 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
                         xtype: 'radiofield',
                         width: '40%',
                         label: 'No',
+                        value: 'No',
                         labelAlign: 'right',
                         labelWidth: '40%',
-                        name: 'rdProductive'
+                        name: 'rdProductive'                        
                    }
                 ]
             },

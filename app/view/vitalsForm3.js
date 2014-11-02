@@ -1,6 +1,6 @@
 Ext.define('PatientVitalsMonitoring.view.vitalsForm3', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.vitalForm3',
+    alias: 'widget.vitalsForm3',
 
     requires: [
         'Ext.form.Panel',
@@ -9,7 +9,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm3', {
         'Ext.form.FieldSet',
         'Ext.field.Radio'
     ],
-
+    id : 'vitalsForm3',
+    xtype: 'vitalsForm3',
     config: {
         fullscreen: true,
         height: 522,
@@ -26,17 +27,21 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm3', {
                     itemId: 'myradiobutton6',
                     width: '40%',
                     label: 'Yes',
+                    value: 'Yes',
                     labelAlign: 'right',
                     labelWidth: '40%',
                     name: 'rdSwelling'
+                    
                 },
                 {
                     xtype: 'radiofield',
                     width: '40%',
                     label: 'No',
+                    value: 'No',
                     labelAlign: 'right',
                     labelWidth: '40%',
                     name: 'rdSwelling'
+
                 }
               ]
             },

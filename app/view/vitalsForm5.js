@@ -1,6 +1,6 @@
 Ext.define('PatientVitalsMonitoring.view.vitalsForm5', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.vitalForm5',
+    alias: 'widget.vitalsForm5',
 
     requires: [
         'Ext.form.Panel',
@@ -9,7 +9,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm5', {
         'Ext.form.FieldSet',
         'Ext.field.Radio'
     ],
-
+    id : 'vitalsForm5',
+    xtype: 'vitalsForm5',
     config: {
         fullscreen: true,
         height: 522,
@@ -30,14 +31,17 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm5', {
                                 xtype: 'radiofield',
                                 width: '40%',
                                 label: 'Yes',
+                                value: 'Yes',
                                 labelAlign: 'right',
                                 labelWidth: '40%',
                                 name: 'rdMedicineDaily'
+
                             },
                             {
                                 xtype: 'radiofield',
                                 width: '40%',
                                 label: 'No',
+                                value: 'No',
                                 labelAlign: 'right',
                                 labelWidth: '40%',
                                 name: 'rdMedicineDaily'

@@ -4,11 +4,11 @@ Ext.define('PatientVitalsMonitoring.controller.Vitals', {
     config: {
          refs: {
              mainView: 'mainview',
-             vitalForm1: 'vitalsForm1',
-             vitalForm2: 'vitalsForm2',
-             vitalForm3: 'vitalsForm3',
-             vitalForm4: 'vitalsForm4',
-             vitalForm5: 'vitalsForm5'
+             vitalForm1: '#vitalsForm1',
+             vitalForm2: '#vitalsForm2',
+             vitalForm3: '#vitalsForm3',
+             vitalForm4: '#vitalsForm4',
+             vitalForm5: '#vitalsForm5'
         },
         views:[
             'vitalsForm1',
@@ -29,53 +29,67 @@ Ext.define('PatientVitalsMonitoring.controller.Vitals', {
     },
     
 
-    showVitals: function(button, e, eOpts) {
-       
-        var vitalDetails = Ext.create('widget.vitalForm2'),	
+    showVitals: function(button, e, eOpts) {       
+        var vitalDetails = Ext.create('widget.vitalsForm2'),	
             mainView = this.getMainView();				
 
         mainView.push({
-            xtype: "vitalForm2",
+            xtype: "vitalsForm2",
             title: "Vitals2"
         });
     },
 
     showVitals2: function(button, e, eOpts) {
         
-        var vitalDetails = Ext.create('widget.vitalForm3'), 
+        var vitalDetails = Ext.create('widget.vitalsForm3'), 
             mainView = this.getMainView();              
 
         mainView.push({
-            xtype: "vitalForm3",
+            xtype: "vitalsForm3",
             title: "Vitals3"
         });
     },
 
     showVitals3: function(button, e, eOpts) {
         
-        var vitalDetails = Ext.create('widget.vitalForm4'), 
+        var vitalDetails = Ext.create('widget.vitalsForm4'), 
             mainView = this.getMainView();              
 
         mainView.push({
-            xtype: "vitalForm4",
+            xtype: "vitalsForm4",
             title: "Vitals4"
         });
     },
 
     showVitals4: function(button, e, eOpts) {
 
-        var vitalDetails = Ext.create('widget.vitalForm5'), 
+        var vitalDetails = Ext.create('widget.vitalsForm5'), 
             mainView = this.getMainView();              
 
         mainView.push({
-            xtype: "vitalForm5",
+            xtype: "vitalsForm5",
             title: "Vitals5"
         });
 
     },
 
     showFinalPanel: function(button, e, eOpts) {
-       
+        var vitalform1 = this.getVitalForm1().getValues();
+        var vitalform2 = this.getVitalForm2().getValues();
+        var vitalform3 = this.getVitalForm3().getValues();
+        var vitalform4 = this.getVitalForm4().getValues();
+        var vitalform5 = this.getVitalForm5().getValues();
+        console.log('vitalform1');
+        console.log(vitalform1);
+        console.log('vitalform2');
+        console.log(vitalform2);
+        console.log('vitalform3');
+        console.log(vitalform3);
+        console.log('vitalform4');
+        console.log(vitalform4);
+        console.log('vitalform5');
+        console.log(vitalform5);
+
         Ext.Msg.alert('SUCCESS', 'Your details have been entered. Thank you');
         mainView = this.getMainView();              
 

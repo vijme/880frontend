@@ -1,6 +1,6 @@
 Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.vitalForm4',
+    alias: 'widget.vitalsForm4',
 
     requires: [
         'Ext.form.Panel',
@@ -9,7 +9,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
         'Ext.form.FieldSet',
         'Ext.field.Radio'
     ],
-
+    id : 'vitalsForm4',
+    xtype: 'vitalsForm4',
     config: {
         fullscreen: true,
         height: 522,
@@ -27,7 +28,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
                                         label: 'Yes',
                                         labelAlign: 'right',
                                         labelWidth: '40%',
-                                        name: 'rdOxygen'
+                                        name: 'rdOxygen',
+                                        value: 'Yes'
                                     },
                                     {
                                         xtype: 'radiofield',
@@ -36,7 +38,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
                                         label: 'No',
                                         labelAlign: 'right',
                                         labelWidth: '40%',
-                                        name: 'rdOxygen'
+                                        name: 'rdOxygen',
+                                        value: 'No'
                                     }
                                 ]
             },
@@ -54,7 +57,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
                                         label: 'Yes',
                                         labelAlign: 'right',
                                         labelWidth: '40%',
-                                        name: 'rdOxygenNew'
+                                        name: 'rdOxygenNew',
+                                        value: 'Yes'
                                     },
                                     {
                                         xtype: 'radiofield',
@@ -62,7 +66,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
                                         label: 'No',
                                         labelAlign: 'right',
                                         labelWidth: '40%',
-                                        name: 'rdOxygenNew'
+                                        name: 'rdOxygenNew',
+                                        value: 'No'
                                     }
                                 ]
             },
@@ -98,13 +103,16 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
                                         xtype: 'radiofield',
                                         width: '40%',
                                         label: 'Yes',
+                                        value: 'Yes',
                                         labelAlign: 'right',
                                         labelWidth: '40%',
                                         name: 'rdOxygenHelping'
+
                                     },
                                     {
                                         xtype: 'radiofield',
                                         width: '40%',
+                                        value: 'No',
                                         label: 'No',
                                         labelAlign: 'right',
                                         labelWidth: '40%',

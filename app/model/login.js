@@ -15,13 +15,13 @@ Ext.define('PatientVitalsMonitoring.model.login', {
             type: 'localstorage',  id: 'SenchaLogin'
         }, //proxy
         validations: [
-            {   field: 'Name', type: 'presence', message: 'First Name is required'},
+            {   field: 'Name', type: 'presence', message: 'User Name is required'},
             {   field: 'HospID', type: 'presence', message: 'Hospital ID is required'},
             {   field: 'Passwd', type: 'presence', message: 'Password is required'  },
             {   field: 'Name', type: 'length', max: 30,   min: 1 , message:
-                     'username should be between 1 to 10 characters'  },
+                     'UserName should be between 1 to 10 characters'  },
             {   field: 'Passwd', type: 'length', max: 10,   min: 4 , message:
-                     'Passwd should be between 4 to 10 characters' }
+                     'Password should be between 4 to 10 characters' }
         ]//validations
     }//config
 });//define

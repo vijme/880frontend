@@ -1,6 +1,6 @@
 Ext.define('PatientVitalsMonitoring.view.vitalsForm1', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.vitalForm1',
+    alias: 'widget.vitalsForm1',
 
     requires: [
         'Ext.form.Panel',
@@ -9,7 +9,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm1', {
         'Ext.form.FieldSet',
         'Ext.field.Radio'
     ],
-
+    id : 'vitalsForm1',
+    xtype: 'vitalsForm1',
     config: {
         fullscreen: true,
         height: 522,
@@ -25,6 +26,7 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm1', {
                 xtype: 'textfield',
                 width: '90%',
                 id: 'txtVitalsday',
+                name: 'txtVitalsday',
                 label: 'Date',
                 labelWidth: '40%',
                 component:{type: 'date'}
@@ -32,18 +34,24 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm1', {
             {
                 xtype: 'textfield',
                 width: '90%',
+                id: 'txtVitalsDate',
+                name: 'txtVitalsDate',
                 label: 'O2 Sat :',
                 labelWidth: '40%'
             },
             {
                 xtype: 'textfield',
                 width: '90%',
+                id: 'txtHeartRate',
+                name: 'txtHeartRate',
                 label: 'Heart Rate :',
                 labelWidth: '40%'
             },
             {
                 xtype: 'textfield',
                 width: '90%',
+                id: 'txtBloodPressure',
+                name: 'txtBloodPressure',
                 label: 'Blood Pressure :',
                 labelWidth: '40%'
             },
@@ -56,17 +64,22 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm1', {
                     {
                         xtype: 'textfield',
                         width: '70%',
+                        id: 'txtWeight',
+                        name: 'txtWeight',
                         label: 'Weight :',
                         labelWidth: '50%'
                         },
                         {
                         xtype: 'radiofield',
-                        itemId: 'myradiobutton',
                         width: '40%',
                         label: 'Kgs',
                         labelAlign: 'right',
                         labelWidth: '',
-                        name: 'rdWeight'
+                        id:'Kgs',
+                        checked: 'false',
+                        value: 'kgs',
+                        name: 'rdWeight',
+                        
                         },
                         {
                         xtype: 'radiofield',
@@ -74,7 +87,11 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm1', {
                         label: 'Lbs',
                         labelAlign: 'right',
                         labelWidth: '',
-                        name: 'rdWeight'
+                        value: 'LBS',
+                        id:'LBS',
+                        checked: 'false',
+                        name: 'rdWeight',
+                        
                         }
                     ]
                 },
