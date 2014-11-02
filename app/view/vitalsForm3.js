@@ -49,12 +49,14 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm3', {
                 xtype: 'textfield',
                 width: '90%',
                 id: 'txtWhere',
+                name: 'txtWhere',
                 style: 'display:none',
                 label: 'Where :'
             },
             {
                 xtype: 'selectfield',
                 id: 'selFrequency',
+                name: 'selFrequency',
                 width: '90%',
                 style: 'display:none',
                 label: 'Frequency :',

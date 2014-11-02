@@ -74,21 +74,77 @@ Ext.define('PatientVitalsMonitoring.controller.Vitals', {
     },
 
     showFinalPanel: function(button, e, eOpts) {
+
         var vitalform1 = this.getVitalForm1().getValues();
-        var vitalform2 = this.getVitalForm2().getValues();
-        var vitalform3 = this.getVitalForm3().getValues();
-        var vitalform4 = this.getVitalForm4().getValues();
-        var vitalform5 = this.getVitalForm5().getValues();
-        console.log('vitalform1');
-        console.log(vitalform1);
-        console.log('vitalform2');
+
+        
+        /**
+
+        { name: 'VitalDate',  type: 'string'  },
+            { name: 'vital02Sat', type: 'string'  },
+            { name: 'hearRate',  type: 'string' },
+            { name: 'bloodPressure',  type: 'string' },
+            { name: 'weight',  type: 'string' },
+            { name: 'weightUnits',  type: 'string' },
+            { name: 'sob',  type: 'string' },
+            { name: 'sobHowLong',  type: 'string' },
+            { name: 'cough',  type: 'string' },
+            { name: 'coughProductive',  type: 'string' },
+            { name: 'coughColor',  type: 'string' },
+            { name: 'swelling',  type: 'string' },
+            { name: 'swellingWhere',  type: 'string' },
+            { name: 'swellingFrequency',  type: 'string' },
+            { name: 'oxygen',  type: 'string' },
+            { name: 'oxygenNew',  type: 'string' },
+            { name: 'oxygenQuantity',  type: 'string' },
+            { name: 'oxygenHelping',  type: 'string' },
+            { name: 'medicationDaily',  type: 'string' }
+        */
+
+        //VitalForm1 field values
+        var vitalEntryDate = vitalform1.txtVitalsday;
+        var vitalOSat = vitalform1.txtOSat;
+        var heartRate = vitalform1.txtHeartRate;
+        var bp = vitalform1.txtBloodPressure;
+        var weight = vitalform1.txtWeight;
+        var weightUnits = vitalform1.rdWeight;
+
+        //VitalForm2 field values
+        var vitalform2 = this.getVitalForm2().getValues();  
         console.log(vitalform2);
-        console.log('vitalform3');
-        console.log(vitalform3);
-        console.log('vitalform4');
-        console.log(vitalform4);
-        console.log('vitalform5');
-        console.log(vitalform5);
+        var sob = vitalform2.selectSOB;
+        var sobDuration = vitalform2.txtSOBDuration;
+        var sobUnits = vitalform2.selectSOBUnits
+        var cough = vitalform2.rdCough;
+        var productive = vitalform2.rdProductive;
+        var color = vitalform2.selColor;
+
+        //VitalForm3 field values
+        var vitalform3 = this.getVitalForm3().getValues();  
+        var swelling = vitalform3.rdSwelling;
+        var where = vitalform3.txtWhere;
+        var frequency = vitalform3.selFrequency;
+
+        // VitalForm4 field values
+        var vitalform4 = this.getVitalForm4().getValues();
+        var oxygen = vitalform4.rdOxygen;
+        var oxygenNew = vitalform4.rdOxygenNew;
+        var oxygenQuantity  = vitalform4.txtOxygen;
+        var oxygenHelping = vitalform4.rdOxygenHelping;
+
+        // VitalForm5 field values
+        var vitalform5 = this.getVitalForm5().getValues();
+        var medicationDaily = vitalform5.rdMedicineDaily;
+
+        var vitalRecord = Ext.ModelManager.getModel('PatientVitalsMonitoring.model.vitals');
+        var record = new vitalRecord({  VitalDate: vitalEntryDate, vital02Sat: vitalOSat, hearRate: heartRate, bloodPressure: bp,
+            weight: weight, weightUnits: weightUnits, sob: sob, sobHowLong: sobDuration, sobUnit: sobUnits, cough: cough, 
+            coughProductive:productive, coughcolor:color,swelling: swelling, swellingWhere: where,
+            swellingFrequency:frequency, oxygen: oxygen, oxygenNew:oxygenNew, oxygenQuantity:oxygenQuantity,
+            oxygenHelping: oxygenHelping, medicationDaily:medicationDaily});        
+        record.save();
+
+
 
         Ext.Msg.alert('SUCCESS', 'Your details have been entered. Thank you');
         mainView = this.getMainView();              

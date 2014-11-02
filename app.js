@@ -48,6 +48,7 @@ Ext.application({
 
     launch: function() {
         Ext.create('PatientVitalsMonitoring.model.login');
+        Ext.create('PatientVitalsMonitoring.model.vitals');
         Ext.create('PatientVitalsMonitoring.view.MainView', {fullscreen: true});
     }
 

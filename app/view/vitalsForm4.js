@@ -46,6 +46,7 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
             {
                                 xtype: 'fieldset',
                                 id: 'fsOxygenNew',
+                                name: 'fsOxygenNew',
                                 style: 'display:none',
                                 width: '90%',
                                 layout: 'hbox',
@@ -82,6 +83,7 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm4', {
                                     {
                                         xtype: 'textfield',
                                         id: 'txtOxygen',
+                                        name: 'txtOxygen',
                                         label: ''
                                     },
                                     {

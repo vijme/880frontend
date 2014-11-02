@@ -20,6 +20,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
 			{
                 xtype: 'selectfield',
                 itemId: 'myselectfield',
+                name: 'selectSOB',
+                id : 'selectSOB',
                 width: '90%',
                 label: 'Do you have shortness of Breath?',
                 labelWidth: '70%',
@@ -41,6 +43,7 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
                 width: '90%',
                 layout: 'hbox',
                 id: 'txtSOBDuration',
+                name: 'txtSOBDuration',
                 style: 'display:none',
                 items:[
                     {
@@ -57,6 +60,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
                     xtype: 'selectfield',
                     width: '30%',
                     itemId: 'myselectfield1',
+                    id: 'selectSOBUnits',
+                    name: 'selectSOBUnits',
                     options: [
                             {
                             text: 'Hours',
@@ -131,6 +136,7 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm2', {
             {
                 xtype: 'selectfield',
                 id: 'selColor',
+                name: 'selColor',
                 style: 'display:none',
                 width: '90%',
                 label: 'Color ?',

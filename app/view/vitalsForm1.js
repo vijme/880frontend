@@ -34,8 +34,8 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm1', {
             {
                 xtype: 'textfield',
                 width: '90%',
-                id: 'txtVitalsDate',
-                name: 'txtVitalsDate',
+                id: 'txtOSat',
+                name: 'txtOSat',
                 label: 'O2 Sat :',
                 labelWidth: '40%'
             },
