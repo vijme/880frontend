@@ -31,12 +31,14 @@ Ext.define('PatientVitalsMonitoring.view.LoginForm', {
                 items: [
                     {
                         xtype: 'textfield',
+                        id: 'txtusrName',
                         label: 'Username :',
                         labelWidth: '40%',
                         name: 'username'
                     },
                     {
                         xtype: 'passwordfield',
+                        id: 'txtPasswd',
                         label: 'Password :',
                         labelWidth: '40%',
                         name: 'password'

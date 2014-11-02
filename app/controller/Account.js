@@ -21,7 +21,7 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
             mainView: 'mainview',
             loginPanel: 'mainview #loginPanel',
             welcomePanel: 'mainview #welcomePanel',
-            vitalDetails: 'vitalsDetails'
+            vitalForm1: 'vitalsForm1'
         },
 
         control: {
@@ -68,12 +68,16 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
 
     login: function(button, e, eOpts) {
 
+        var name = Ext.getCmp('txtusrName').getValue(),
+            passwd = Ext.getCmp('txtPasswd').getValue();
+        
+
         var form = button.up('formpanel'),			// Login form
         	values = form.getValues(),				// Form values
         	mainView = this.getMainView(),			// Main view
         	loginPanel = this.getLoginPanel(),		// Login and register buttons
-        	welcomePanel = this.getWelcomePanel(),	// Welcome panel
-            vitalDetails = this.getVitalDetails();
+        	welcomePanel = this.getWelcomePanel();	// Welcome panel
+            //vitalDetails = this.getvitalDetailsForm();
 
         // Success
         var successCallback = function(resp, ops) {
@@ -84,12 +88,12 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
             // Hide login panel
             //loginPanel.hide();
 
-            var vitalDetails = Ext.create('widget.vitalDetails');	// Registration form
+            var vitalDetails = Ext.create('widget.vitalForm1');	// Registration form
 
 
                 // Navigate to register
                 mainView.push({
-                    xtype: "vitalDetails",
+                    xtype: "vitalForm1",
                     title: "Data"
                 });
 
@@ -105,12 +109,22 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
 
 
         // TODO: Login using server-side authentication service
-        // Ext.Ajax.request({
-        //		url: "/api/login",
-        //		params: values,
-        //		success: successCallback,
-        //		failure: failureCallback
-        // });
+        /* Ext.Ajax.request({
+        	url: 'http://127.0.0.1:3000/check',
+            method: 'GET',
+
+            type:'jsonp',
+            useDefaultXhrHeader: false,
+
+            params:
+            {
+                 username : name,
+                 password: passwd
+            },
+            
+        	success: successCallback,
+        	failure: failureCallback
+         });*/
 
         // Just run success for now
         successCallback();
@@ -118,22 +132,47 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
 
     register: function(button, e, eOpts) {
 
+        var name = Ext.getCmp('txtName').getValue(),
+            hospId = Ext.getCmp('txtHospId').getValue(),
+            passwd = Ext.getCmp('txtPasswd').getValue(),
+            passwd2 = Ext.getCmp('txtPasswd2').getValue();
+        
+        if (passwd != passwd2){
+            Ext.Msg.alert('ALERT', 'Passwords donot match', Ext.emptyFn);
+        }
+        else {
+            var loginrecord = Ext.ModelManager.getModel('PatientVitalsMonitoring.model.login');
+            var record = new loginrecord({  Name: name, HospID:hospId, Passwd: passwd  });
+            errs = record.validate();
+            var msg = '';    
+            if (!errs.isValid()) {
+                    errs.each(function (err) {
+                    msg += err.getMessage() + '<br/>';
+                });
+                Ext.Msg.alert('ERROR', msg);
+            } else {
+                Ext.Msg.alert('SUCCESS', 'Looks like the model is valid');
+                record.save();
+            } 
+        }// if
+        
+            
         var form = button.up('formpanel'),			// Login form
             values = form.getValues(),				// Form values
             mainView = this.getMainView(),			// Main view
             loginPanel = this.getLoginPanel(),		// Login and register buttons
             welcomePanel = this.getWelcomePanel();	// Welcome panel
-            vitalDetails = this.getVitalDetails();
+            vitalDetailsForm = this.getVitalDetailsForm();
 
         // Success
         var successCallback = function(resp, ops) {
-
-             var vitalDetails = Ext.create('widget.vitalDetails');	// Registration form
+            Ext.Msg.alert('REGISTRATION STATUS', 'Success', Ext.emptyFn);
+             var vitalDetails = Ext.create('widget.vitalForm1');	// Registration form
 
 
                 // Navigate to register
                 mainView.push({
-                    xtype: "vitalDetails",
+                    xtype: "vitalForm1",
                     title: "Vital Details"
                 });
 
@@ -148,16 +187,28 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
         };
 
 
+
         // TODO: Register using server-side authentication service
-        // Ext.Ajax.request({
-        //		url: "/api/register",
-        //		params: values,
-        //		success: successCallback,
-        //		failure: failureCallback
-        // });
+        Ext.Ajax.request({
+            url: 'http://127.0.0.1:3000/registers.json',
+            method: 'POST',
+
+            type:'jsonp',
+            useDefaultXhrHeader: false,
+
+            params:
+            {
+                username : name,
+                hospID: hospId,
+                passwd: passwd
+
+            },
+        		success: successCallback,
+        		failure: failureCallback
+        });
 
         // Just run success for now
-        successCallback();
+        //successCallback();
     }
 
 });

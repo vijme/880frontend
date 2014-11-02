@@ -31,18 +31,21 @@ Ext.define('PatientVitalsMonitoring.view.RegisterForm', {
                 items: [
                     {
                         xtype: 'textfield',
+                        id: 'txtName',
                         label: 'Username :',
                         labelWidth: '40%',
                         name: 'name'
                     },
                     {
                         xtype: 'textfield',
+                        id: 'txtHospId',
                         label: 'Hospital Id :',
                         labelWidth: '42%',
                         name: 'username'
                     },
                     {
                         xtype: 'passwordfield',
+                        id: 'txtPasswd',
                         label: 'Password :',
                         labelWidth: '40%',
                         name: 'password'
@@ -50,8 +53,9 @@ Ext.define('PatientVitalsMonitoring.view.RegisterForm', {
                     {
                         xtype: 'passwordfield',
                         label: 'Re-enter Password :',
-                        labelWidth: '60%',
+                        labelWidth: '40%',
                         labelWrap: true,
+                        id: 'txtPasswd2',
                         name: 'password'
                     }
                 ]

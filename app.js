@@ -28,16 +28,26 @@ Ext.application({
         'MainView',
         'LoginForm',
         'RegisterForm',
-        'vitalsDetails',
-        'MyRadioButton11'
+        'vitalsForm1',
+        'vitalsForm2',
+        'vitalsForm3',
+        'vitalsForm4',
+        'vitalsForm5'
     ],
     controllers: [
-        'Account'
+        'Account',
+        'Vitals'
+    ],
+    models: [
+        'login'
+    ],
+    stores: [
+        'loginStore'
     ],
     name: 'PatientVitalsMonitoring',
 
     launch: function() {
-
+        Ext.create('PatientVitalsMonitoring.model.login');
         Ext.create('PatientVitalsMonitoring.view.MainView', {fullscreen: true});
     }
 
