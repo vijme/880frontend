@@ -145,14 +145,64 @@ Ext.define('PatientVitalsMonitoring.controller.Vitals', {
         record.save();
 
 
+        var successCallback = function(resp, ops) {
+        Ext.Msg.alert('SUCCESS', 'Your details have been entered. Thank you. Please \
+            come back tomorrow to enter your vitals.');
+        //mainView = this.getMainView();              
 
-        Ext.Msg.alert('SUCCESS', 'Your details have been entered. Thank you');
-        mainView = this.getMainView();              
+            // mainView.push({
+            //     xtype: "loginform",
+            //     title: "Login"
+            // });
 
-        mainView.push({
-            xtype: "loginform",
-            title: "Login"
+        };
+
+        var failureCallback = function(resp, ops) {
+
+            // Show login failure error
+            Ext.Msg.alert("Sorry!! Failure", resp);
+
+        };
+
+        var controller = PatientVitalsMonitoring.app.getController('Account');
+        console.log(controller);
+        console.log(controller.getUserName());
+
+        Ext.Ajax.request({
+            url: 'http://127.0.0.1:3000/vitals.json',
+            method: 'POST',
+
+            type:'jsonp',
+            useDefaultXhrHeader: false,
+
+            params:
+            {
+                vDate: vitalEntryDate, 
+                o2Sat: vitalOSat, 
+                heartRate: heartRate, 
+                bloodpressure: bp, 
+                weight: weight, 
+                sob: sob,
+                sobDuration: sobDuration, 
+                cough: cough, 
+                coughProductive: productive, 
+                coughColor: color, 
+                swelling: swelling,
+                swellingWhere: where, 
+                swellingFrequency: frequency, 
+                oxygen: oxygen, 
+                oxygenNew: oxygenNew,
+                oxygenQuantity: oxygenQuantity, 
+                oxygenHelping: oxygenHelping, 
+                dailyMedications: medicationDaily
+                
+            },
+                success: successCallback,
+                failure: failureCallback
         });
+
+
+
     }
 
 });

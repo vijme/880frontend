@@ -39,7 +39,8 @@ Ext.application({
         'Vitals'
     ],
     models: [
-        'login'
+        'login',
+        'vitals'
     ],
     stores: [
         'loginStore'

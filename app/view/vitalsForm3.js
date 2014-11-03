@@ -96,13 +96,13 @@ Ext.define('PatientVitalsMonitoring.view.vitalsForm3', {
     },
 
     onMyradiobutton6Change: function(checkboxfield, newValue, oldValue, eOpts) {
-                    if (newValue){
-                        document.getElementById("txtWhere").style.display='block';
-                        document.getElementById("selFrequency").style.display='block';
-                    } else {
-                        document.getElementById("txtWhere").style.display='none';
-                        document.getElementById("selFrequency").style.display='none';
-                    }
-    }
+    if (newValue){
+            document.getElementById("txtWhere").style.display='block';
+            document.getElementById("selFrequency").style.display='block';
+        } else {
+            document.getElementById("txtWhere").style.display='none';
+            document.getElementById("selFrequency").style.display='none';
+        }
+}
 });
 

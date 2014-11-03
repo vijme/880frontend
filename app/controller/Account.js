@@ -16,6 +16,13 @@
 Ext.define('PatientVitalsMonitoring.controller.Account', {
     extend: 'Ext.app.Controller',
 
+    // init: function(){
+    //     this.myusername = "viji";
+    // },
+    //var myusername;
+
+   
+
     config: {
         refs: {
             mainView: 'mainview',
@@ -71,6 +78,7 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
         var name = Ext.getCmp('txtusrName').getValue(),
             passwd = Ext.getCmp('txtPasswd').getValue();
         
+            myusername = name;
 
         var form = button.up('formpanel'),			// Login form
         	values = form.getValues(),				// Form values
@@ -209,6 +217,9 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
 
         // Just run success for now
         //successCallback();
+    },
+    getUserName: function(){
+        return this.myusername;
     }
 
 });
