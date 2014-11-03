@@ -22,6 +22,8 @@ Ext.define('PatientVitalsMonitoring.view.LoginForm', {
         'Ext.field.Password',
         'Ext.Button'
     ],
+    id : 'loginform',
+    xtype: 'loginform',
 
     config: {
         items: [

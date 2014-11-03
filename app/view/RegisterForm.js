@@ -22,6 +22,8 @@ Ext.define('PatientVitalsMonitoring.view.RegisterForm', {
         'Ext.field.Password',
         'Ext.Button'
     ],
+    id : 'registerform',
+    xtype: 'registerform',
 
     config: {
         items: [

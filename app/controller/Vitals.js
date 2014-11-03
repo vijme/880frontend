@@ -8,7 +8,8 @@ Ext.define('PatientVitalsMonitoring.controller.Vitals', {
              vitalForm2: '#vitalsForm2',
              vitalForm3: '#vitalsForm3',
              vitalForm4: '#vitalsForm4',
-             vitalForm5: '#vitalsForm5'
+             vitalForm5: '#vitalsForm5',
+             loginform: '#loginform'
         },
         views:[
             'vitalsForm1',
@@ -143,7 +144,8 @@ Ext.define('PatientVitalsMonitoring.controller.Vitals', {
             swellingFrequency:frequency, oxygen: oxygen, oxygenNew:oxygenNew, oxygenQuantity:oxygenQuantity,
             oxygenHelping: oxygenHelping, medicationDaily:medicationDaily});        
         record.save();
-
+        var username = this.getLoginform().getValues();
+        console.log(username);
 
         var successCallback = function(resp, ops) {
         Ext.Msg.alert('SUCCESS', 'Your details have been entered. Thank you. Please \
@@ -164,9 +166,7 @@ Ext.define('PatientVitalsMonitoring.controller.Vitals', {
 
         };
 
-        var controller = PatientVitalsMonitoring.app.getController('Account');
-        console.log(controller);
-        console.log(controller.getUserName());
+
 
         Ext.Ajax.request({
             url: 'http://127.0.0.1:3000/vitals.json',

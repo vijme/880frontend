@@ -217,9 +217,6 @@ Ext.define('PatientVitalsMonitoring.controller.Account', {
 
         // Just run success for now
         //successCallback();
-    },
-    getUserName: function(){
-        return this.myusername;
     }
 
 });
